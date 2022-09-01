@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* Reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Common */
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  animation: sky linear 20s infinite;
+}
+
+/* Section */
+section {
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 59%;
+  transform: translate(-50%, -50%);
+}
+section .sky {
+  /* border: 1px solid #000; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Sky */
+section .sky .sun {
+  width: 180px;
+  position: absolute;
+  /* baseline으로인한 미세한 여백 생김 방지 */
+  display: block;
+  left: 50%;
+  /* translate로 중앙정렬해도 되지만 
+  translate로 애니메이션 구현해야해서 margin으로 구현
+  width가 180px이니까 자기 크기의 반만큼 강제로 중앙정렬 */
+  margin-left: -90px;
+  /* 사람과 컴퓨터 좌표계 다름 주의 -130px하면 130px만큼 위로 올라감 */
+  top: -130px;
+  /* x축 center y축 600px */
+  transform-origin: center 600px;
+  /* transition: 5s; */
+  animation: sun linear 20s infinite;
+}
+/* section:hover .sky .sun {
+  transform: rotate(90deg);
+} */
+section .sky .moon {
+  width: 160px;
+  position: absolute;
+  display: block;
+  left: 50%;
+  margin-left: -80px;
+  top: -130px;
+  transform-origin: center 600px;
+  animation: moon linear 20s infinite;
+}
+section .sky .cloud1 {
+  width: 160px;
+  position: absolute;
+  left: 0%;
+  top: -30px;
+  animation: cloud1 linear 20s infinite;
+}
+section .sky .cloud2 {
+  width: 90px;
+  position: absolute;
+  left: 12%;
+  top: 20px;
+  animation: cloud2 linear 10s infinite;
+}
+
+/* City */
+section .city {
+  position: absolute;
+}
+section .city .city__img {
+  position: absolute;
+  bottom: 0px;
+  width: 1000px;
+}
+
+/* Keyframes */
+@keyframes sky {
+  0% {
+    background-color: #636888;
+  }
+  25% {
+    background-color: #b1e1e2;
+  }
+  50% {
+    background-color: #fcd2e2;
+  }
+  75% {
+    background-color: #675577;
+  }
+  100% {
+    background-color: #636888;
+  }
+}
+@keyframes sun {
+  0% {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  25% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  75% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(270deg);
+    opacity: 0;
+  }
+}
+@keyframes moon {
+  /* 시작점에서 투명한 상태로 태양이 닿기를 기다리는 중 */
+  0% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  25% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  75% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes cloud1 {
+  0% {
+    left: 0%;
+    opacity: 1;
+  }
+  50% {
+    left: 85%;
+    opacity: 0;
+  }
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
+}
+@keyframes cloud2 {
+  0% {
+    left: 12%;
+    opacity: 0;
+  }
+  25% {
+    left: 62%;
+    opacity: 1;
+  }
+  50% {
+    left: 90%;
+    opacity: 0;
+  }
+  75% {
+    left: 62%;
+    opacity: 1;
+  }
+  100% {
+    left: 12%;
+    opacity: 0;
+  }
+}

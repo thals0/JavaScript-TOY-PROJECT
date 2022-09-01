@@ -1,0 +1,74 @@
+header{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+    font-size: smaller;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    padding: 8px 12px;
+}
+
+
+.other {
+    vertical-align: top;
+    color: gray;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.day {
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.specialDay{
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.day:hover{
+    font-size: larger;
+}
+
+.redday:hover{
+    font-size: larger;
+}
+
+a:hover {
+    font-weight: 900;
+
+}
+
+.redday {
+    color: red;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+/* table 세로선 background-color 변경 */
+th:nth-child(2n), td:nth-child(2n) {
+    background-color: #bbdefb;
+}

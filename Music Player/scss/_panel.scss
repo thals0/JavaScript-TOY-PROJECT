@@ -1,0 +1,165 @@
+section {
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  margin-left: -10vw;
+  margin-top: -32.5vh;
+  transition: 1s;
+
+  article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    &.on {
+      .inner {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      padding: 5vh 2.5vw 8vh;
+      border-radius: 10px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+      opacity: 0.6;
+      transform: scale(0.8);
+      transition: 1s;
+
+      // 사진을 2개 넣어서
+      // 1개는 위로 1개는 블러처리 한 뒤 아래로
+      .pic {
+        width: 15vw;
+        height: 15vw;
+        position: relative;
+        background-repeat: no-repeat;
+        // 절대 보일 수 없는 위치 까지 날림
+        background-position: -1000px;
+
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          // 부모요소에 딱 붙게 함
+          top: 0px;
+          left: 0px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          // 부모 요소에서 받아와라
+          background-image: inherit;
+        }
+
+        // 사진 중 1개 blur 처리
+        &::before {
+          filter: blur(20px) brightness(130%);
+          transform: translate(0, 10%);
+        }
+
+        .dot {
+          width: 2.5vw;
+          height: 2.5vw;
+          position: absolute;
+          // 중앙정렬 transform 방법 쓰려면
+          // 앞으로 여기에 애니메이션 쓸일 없는지 생각하기
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          border-radius: 50%;
+          // 그림자 안쪽으로 걸기 = inset
+          box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+
+        &.on {
+          &::before {
+            animation: rotation2 4s linear infinite;
+          }
+
+          &::after {
+            animation: rotation 4s linear infinite;
+          }
+        }
+      }
+
+      .text {
+        width: 15vw;
+        text-align: center;
+        position: absolute;
+        margin-top: 50px;
+        letter-spacing: 1px;
+
+        h2 {
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: #777;
+        }
+
+        .control {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 40px;
+
+          li {
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.4s;
+
+            &.play {
+              transform: scale(1.5);
+              opacity: 0.8;
+            }
+
+            &:hover {
+              transform: scale(1.5);
+              opacity: 0.8;
+
+              &.play {
+                // transform 중복처리 아님
+                // 1.5 -> 1.8
+                transform: scale(1.8);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// keyframes
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// blur 처리한 사진위한 keyframes
+@keyframes rotation2 {
+  0% {
+    // 위에서 선언 했던 translate도 넣어 주어야 함
+    transform: translate(0, 10%) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 10%) rotate(360deg);
+  }
+}

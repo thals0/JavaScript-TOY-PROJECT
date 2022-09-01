@@ -1,0 +1,179 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+/* font-family: "Orbitron", sans-serif; */
+
+/* RESET */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* COMMON */
+body.member1 {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+body.member2 {
+  background-color: rgba(98, 166, 226, 0.3);
+}
+body.member3 {
+  background-color: rgba(176, 88, 47, 0.3);
+}
+/* SECTION */
+/* flex로 중앙정렬 시도해봄 근데 왜 안되지 */
+/* .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.wrap {
+  width: 340px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.wrap .menu a {
+  font-size: 20px;
+  color: #666;
+}
+.wrap .menu a:first-child {
+  float: left;
+}
+.wrap .menu a:last-child {
+  float: right;
+}
+.wrap .profile {
+  width: 100%;
+  text-align: center;
+}
+.wrap .profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.wrap .profile img.member1 {
+  box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.8);
+}
+.wrap .profile img.member2 {
+  box-shadow: 5px 15px 30px rgba(98, 166, 226, 0.7);
+}
+.wrap .profile img.member3 {
+  box-shadow: 5px 15px 30px rgba(176, 88, 47, 0.7);
+}
+.wrap .profile h1 {
+  font: bold 22px/1 "Orbitron";
+  color: #555;
+  margin: 20px 0px 10px 0px;
+}
+.wrap .profile p {
+  font: 14px/1 "Orbitron";
+  /* 숫자9에 가까워질수록 연해짐 */
+  color: #999;
+  margin-bottom: 20px;
+}
+.wrap .profile .btnView {
+  display: block;
+  width: 180px;
+  height: 32px;
+  /* block요소 중앙정렬 */
+  /* 넓이값을 알기 때문에 이 방법 사용가능 */
+  margin: 0px auto 20px;
+  /* background-color: black; */
+  font: 15px/32px "Orbitron";
+  color: white;
+  border-radius: 16px;
+  /* box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4); */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+}
+.wrap .profile .btnView.member1 {
+  background-color: black;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
+}
+.wrap .profile .btnView.member2 {
+  background-color: #5c95eb;
+  box-shadow: 5px 10px 20px rgba(98, 166, 226, 0.3);
+}
+.wrap .profile .btnView.member3 {
+  background-color: #b0582f;
+  box-shadow: 5px 10px 20px rgba(176, 88, 47, 0.3);
+}
+.wrap .content {
+  margin-bottom: 25px;
+}
+.wrap .content li {
+  width: 100%;
+  padding: 10px 0px;
+  border-bottom: 1px solid #eee;
+}
+.wrap .content li:last-child {
+  border-bottom: none;
+}
+.wrap .content li i {
+  width: 20%;
+  text-align: center;
+  color: #555;
+  font-size: 15px;
+  text-shadow: 2px 2px 2px #ddd;
+}
+.wrap .content li span {
+  color: #555;
+  font: 13px/1 "Orbitron";
+  letter-spacing: 1px;
+}
+.wrap .others {
+  text-align: center;
+  font-size: 0px;
+  margin-bottom: 20px;
+}
+.wrap .others a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0px 10px;
+  opacity: 0.4;
+}
+.wrap .others a:nth-of-type(1) {
+  background-color: black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.wrap .others a:nth-of-type(2) {
+  background-color: #5c95eb;
+  box-shadow: 5px 5px 10px rgba(98, 166, 226, 0.5);
+}
+.wrap .others a:nth-of-type(3) {
+  background-color: #b0582f;
+  box-shadow: 5px 5px 10px rgba(69, 35, 18, 0.5);
+}
+
+.wrap .others a.on {
+  opacity: 1;
+}
+
+/* body에만 class 걸어서 
+.member2 .warp 이렇게 수정하면 되는 거 였음 ㅋㅋ 
+바보 솜니야 ~ */
+/* 수정하셈 ㅋㅋ */
+/* member2 */
+/* member3 */

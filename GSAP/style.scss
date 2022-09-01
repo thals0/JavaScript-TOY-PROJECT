@@ -1,0 +1,25 @@
+* {
+  margin: 0pc;
+  padding: 0pc;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: #ff00a2;
+    margin-bottom: 50px;
+    text-align: center;
+    line-height: 200px;
+    color: #fff;
+  }
+
+  .box0 {
+    width: 100%;
+    height: 100vh;
+    background-color: #c65efc;
+  }
+}

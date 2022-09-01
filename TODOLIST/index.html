@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Reset CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/8924a45e02.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- google font Eng-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google font Kor -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- JS -->
+    <script defer src="./main.js"></script>
+    <title>Todolist</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>Todo List</header>
+    <!-- Feed -->
+    <main>
+      <!-- daily list -->
+      <div class="daily">
+        <form class="todo-form">
+          <div>
+            <span>Daily</span>
+            <button class="add">+</button>
+          </div>
+          <input type="text" class="todo-input" />
+          <button class="submit">+</button>
+        </form>
+        <ul class="todo-list">
+          <!-- <li class="item">1</li>
+          <li class="item">2</li>
+          <li class="item">3</li>
+          <li class="item">4</li> -->
+        </ul>
+      </div>
+      <!-- tracker list-->
+      <div class="tracker">
+        <form class="todo-form">
+          <div>
+            <span>Tracker</span>
+            <button class="add">+</button>
+          </div>
+          <input type="text" class="todo-input" />
+          <button class="submit">+</button>
+        </form>
+        <ul class="todo-list">
+          <!-- <li class="item">1</li>
+          <li class="item">2</li>
+          <li class="item">3</li>
+          <li class="item">4</li> -->
+        </ul>
+      </div>
+      <!-- study list-->
+      <div class="study">
+        <form class="todo-form">
+          <div>
+            <span>Study</span>
+            <button class="add">+</button>
+          </div>
+          <input type="text" class="todo-input" />
+          <button class="submit">+</button>
+        </form>
+        <ul class="todo-list">
+          <!-- <li class="item">1</li>
+          <li class="item">2</li>
+          <li class="item">3</li>
+          <li class="item">4</li> -->
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
